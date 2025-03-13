@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalanceLedgerApi", "BalanceLedgerApi.csproj", "{257383AB-998B-47F7-8A8E-AB962D14E42B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalanceLedger.Test", "..\BalanceLedger.Test\BalanceLedger.Test.csproj", "{71D6D58D-EDEC-4721-BC87-79114C84183D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalanceLedgerApi.Test", "..\BalanceLedger.Test\BalanceLedgerApi.Test.csproj", "{71D6D58D-EDEC-4721-BC87-79114C84183D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

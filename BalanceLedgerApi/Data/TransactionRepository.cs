@@ -1,4 +1,4 @@
-﻿using BalanceLedgerApi.Application.Interfaces.Repository;
+﻿using BalanceLedgerApi.Application.Interface.Repository;
 using BalanceLedgerApi.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;

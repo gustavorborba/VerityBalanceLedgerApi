@@ -1,7 +1,7 @@
 ﻿using BalanceLedgerApi.Application.Dto;
 using BalanceLedgerApi.Domain.Model;
 
-namespace BalanceLedgerApi.Application.Interfaces.Service
+namespace BalanceLedgerApi.Application.Interface.Service
 {
     public interface ITransactionService
     {

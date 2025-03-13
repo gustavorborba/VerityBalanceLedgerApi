@@ -1,5 +1,5 @@
-using BalanceLedgerApi.Application.Interfaces.Repository;
-using BalanceLedgerApi.Application.Interfaces.Service;
+using BalanceLedgerApi.Application.Interface.Repository;
+using BalanceLedgerApi.Application.Interface.Service;
 using BalanceLedgerApi.Application.Service;
 using BalanceLedgerApi.Data;
 using BalanceLedgerApi.Domain.Model;

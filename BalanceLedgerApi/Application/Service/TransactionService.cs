@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BalanceLedgerApi.Application.Dto;
-using BalanceLedgerApi.Application.Interfaces.Repository;
-using BalanceLedgerApi.Application.Interfaces.Service;
+using BalanceLedgerApi.Application.Interface.Repository;
+using BalanceLedgerApi.Application.Interface.Service;
 using BalanceLedgerApi.Domain.Model;
 using BalanceLedgerApi.Util;
 

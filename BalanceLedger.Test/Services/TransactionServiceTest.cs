@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using BalanceLedgerApi.Application.Dto;
-using BalanceLedgerApi.Application.Interfaces.Repository;
+using BalanceLedgerApi.Application.Interface.Repository;
 using BalanceLedgerApi.Application.Service;
 using BalanceLedgerApi.Domain.Model;
 using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 
-namespace BalanceLedgerApi.Application.Tests.Service
+namespace BalanceLedgerApi.Test.Services
 {
     public class TransactionServiceTests
     {

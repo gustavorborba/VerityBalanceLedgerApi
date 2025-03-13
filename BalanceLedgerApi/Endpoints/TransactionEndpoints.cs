@@ -1,5 +1,5 @@
 ﻿using BalanceLedgerApi.Application.Dto;
-using BalanceLedgerApi.Application.Interfaces.Service;
+using BalanceLedgerApi.Application.Interface.Service;
 
 namespace BalanceLedgerApi.Endpoints
 {
@@ -7,7 +7,7 @@ namespace BalanceLedgerApi.Endpoints
     {
         public static void MapTransactionEndpoints(this IEndpointRouteBuilder routes)
         {
-            routes.MapPost("/add", async (TransactionDto dto, ITransactionService service) =>
+            routes.MapPost("/transaction/add", async (TransactionDto dto, ITransactionService service) =>
             {
                 var result = await service.Save(dto);
 
@@ -16,7 +16,7 @@ namespace BalanceLedgerApi.Endpoints
             .WithName("Add Transaction")
             .RequireAuthorization();
 
-            routes.MapGet("/all", async (ITransactionService service) =>
+            routes.MapGet("transaction/all", async (ITransactionService service) =>
             {
                 return await service.All();
             })

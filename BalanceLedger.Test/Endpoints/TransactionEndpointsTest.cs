@@ -1,7 +1,5 @@
 ﻿using BalanceLedgerApi.Application.Dto;
-using BalanceLedgerApi.Application.Interfaces.Repository;
-using BalanceLedgerApi.Application.Interfaces.Service;
-using BalanceLedgerApi.Application.Service;
+using BalanceLedgerApi.Application.Interface.Service;
 using BalanceLedgerApi.Domain.Enum;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
@@ -12,7 +10,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace BalanceLedger.Test.Endpoints
+namespace BalanceLedgerApi.Test.Endpoints
 {
     public class TransactionEndpointsTest : IClassFixture<WebApplicationFactory<Program>>
     {

@@ -4,12 +4,15 @@ services:
     container_name: mongo_db
     restart: always
     environment:
+      - TZ=${TZ}
+    environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
       MONGO_INITDB_DATABASE: ledger_db
     ports:
       - "27017:27017"
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - mongo_data:/data/db
 
 volumes:

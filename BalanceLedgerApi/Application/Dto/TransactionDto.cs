@@ -6,6 +6,5 @@ namespace BalanceLedgerApi.Application.Dto
     {
         public TransactionType Type { get; set; }
         public decimal Value { get; set; }
-        public DateTime DateCreated { get; set; }
     }
 }

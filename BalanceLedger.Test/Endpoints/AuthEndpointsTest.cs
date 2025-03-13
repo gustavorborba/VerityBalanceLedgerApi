@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Text;
 
-namespace BalanceLedger.Test.Endpoints
+namespace BalanceLedgerApi.Test.Endpoints
 {
     public class AuthEndpointsTests(WebApplicationFactory<Program> factory) : IClassFixture<WebApplicationFactory<Program>>
     {

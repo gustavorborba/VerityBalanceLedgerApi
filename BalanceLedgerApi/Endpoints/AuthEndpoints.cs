@@ -9,14 +9,15 @@ namespace BalanceLedgerApi.Endpoints
     {
         public static void MapAuthEndpoints(this IEndpointRouteBuilder routes)
         {
-            routes.MapPost("/authenticate/", [AllowAnonymous] (User user, IOptions<AppSettings> appSettings) =>
+            routes.MapPost("auth/authenticate", [AllowAnonymous] (User user, IOptions<AppSettings> appSettings) =>
             {
-                //Eu sei, se der tempo irei concluir :C
+                //Feito para teste, se der tempo irei fazer a autenticação completa com criptografia e controle de usuário
                 if (user.Email == "teste@teste.com" && user.Password == "minhaSenha")
                     return Results.Ok(JwtBearerService.GenerateToken(user, appSettings.Value.JwtToken));
 
                 return Results.Unauthorized();
-            });
+            })
+            .WithName("User Authentication");
         }
     }
 }
