@@ -4,8 +4,6 @@ services:
     container_name: mongo_db
     restart: always
     environment:
-      - TZ=${TZ}
-    environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
       MONGO_INITDB_DATABASE: ledger_db

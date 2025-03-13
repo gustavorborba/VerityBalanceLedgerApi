@@ -3,9 +3,9 @@
     public class CommonResponseDto<T>
     {
         public bool Success { get; set; }
-        public string? Message { get; set; }
-        public T? Data { get; set; }
-        public string? Error { get; set; }
+        public string Message { get; set; } = string.Empty;
+        public T Data { get; set; } = default!;
+        public string Error { get; set; } = string.Empty;
 
         public static CommonResponseDto<T> SuccessResponse(T data, string message = "Operation successful.")
             => new()
