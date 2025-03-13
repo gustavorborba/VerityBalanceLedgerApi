@@ -6,6 +6,6 @@ namespace BalanceLedgerApi.Domain.Model
     {
         public TransactionType Type { get; set; }
         public decimal Value { get; set; }
-        public DateTime DateCreated { get; set; } = DateTime.Now;
+        public DateTime DateCreated { get; set; } = DateTime.UtcNow;
     }
 }

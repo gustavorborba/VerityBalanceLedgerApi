@@ -55,10 +55,6 @@ static void ConfigureServices(WebApplicationBuilder builder, AppSettings appSett
 
     builder.Services.AddAuthorization();
 
-    builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(appSettings.LedgerConnectionString));
-
-
     builder.Services.AddSingleton(sp => new MongoClient(appSettings.MongoSettings.ConnectionString));
 
     builder.Services.AddScoped(sp =>
@@ -75,13 +71,6 @@ static void ConfigureApp(WebApplication app)
 {
     app.UseAuthentication();
     app.UseAuthorization();
-
-    //this can be done with migrations, to keep it simple i'm creating the tables here
-    using (var scope = app.Services.CreateScope())
-    {
-        var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        dbContext.Database.EnsureCreated();
-    }
 
     if (app.Environment.IsDevelopment())
     {

@@ -35,7 +35,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             var user = new { Email = "teste@teste.com", Password = "minhaSenha" };
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
 
-            var response = await _client.PostAsync("/authenticate", content);
+            var response = await _client.PostAsync("auth/authenticate", content);
             var authResponse = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
 
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authResponse);
@@ -45,7 +45,7 @@ namespace BalanceLedgerApi.Test.Endpoints
         public async Task Add_ValidTransaction_ReturnOk()
         {
             // Arrange
-            var transaction = new TransactionDto { Value = 100, Type = TransactionType.Credit, DateCreated = DateTime.Now };
+            var transaction = new TransactionDto { Value = 100, Type = TransactionType.Credit };
             var commonResponse = new CommonResponseDto<TransactionDto>()
             {
                 Data = transaction,
@@ -56,7 +56,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             await AuthenticateAsync();
 
             // Act
-            var response = await _client.PostAsync("/add", content);
+            var response = await _client.PostAsync("transaction/add", content);
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -70,7 +70,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             await AuthenticateAsync();
 
             // Act
-            var response = await _client.PostAsync("/add", content);
+            var response = await _client.PostAsync("transaction/add", content);
 
             // Assert
             Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
@@ -81,7 +81,7 @@ namespace BalanceLedgerApi.Test.Endpoints
         {
             // Act
             await AuthenticateAsync();
-            var response = await _client.GetAsync("/all");
+            var response = await _client.GetAsync("transaction/all");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -96,7 +96,7 @@ namespace BalanceLedgerApi.Test.Endpoints
         public async Task GetAll_WithoutAuthentication_ReturnUnauthorized()
         {
             // Act
-            var response = await _client.GetAsync("/all");
+            var response = await _client.GetAsync("transaction/all");
 
             // Assert
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
@@ -106,11 +106,11 @@ namespace BalanceLedgerApi.Test.Endpoints
         public async Task Add_WithoutAuthentication_ReturnUnauthorized()
         {
             // Arrange
-            var transaction = new TransactionDto { Value = 100, Type = TransactionType.Credit, DateCreated = DateTime.Now };
+            var transaction = new TransactionDto { Value = 100, Type = TransactionType.Credit };
             var content = new StringContent(JsonConvert.SerializeObject(transaction), Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _client.PostAsync("/add", content);
+            var response = await _client.PostAsync("transaction/add", content);
 
             // Assert
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);

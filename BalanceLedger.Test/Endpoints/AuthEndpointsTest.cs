@@ -18,7 +18,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
 
             // Act:
-            var response = await _client.PostAsync("/authenticate", content);
+            var response = await _client.PostAsync("auth/authenticate", content);
 
             // Assert:
             response.EnsureSuccessStatusCode();
@@ -34,7 +34,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _client.PostAsync("/authenticate", content);
+            var response = await _client.PostAsync("auth/authenticate", content);
 
             // Assert
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
@@ -47,7 +47,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             var content = new StringContent("", Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _client.PostAsync("/authenticate", content);
+            var response = await _client.PostAsync("auth/authenticate", content);
 
             // Assert
             Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
@@ -61,7 +61,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _client.PostAsync("/authenticate", content);
+            var response = await _client.PostAsync("auth/authenticate", content);
 
             // Assert
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
@@ -75,7 +75,7 @@ namespace BalanceLedgerApi.Test.Endpoints
             var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _client.PostAsync("/authenticate", content);
+            var response = await _client.PostAsync("auth/authenticate", content);
 
             // Assert
             Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
