@@ -79,8 +79,23 @@ namespace BalanceLedgerApi.Test.Endpoints
         [Fact]
         public async Task GetAll_Transactions_ReturnOkAndList()
         {
-            // Act
+            // Arrange
+            var transactionsList = new List<TransactionDto>
+            {
+                new() { Value = 100, Type = TransactionType.Credit },
+                new() { Value = 200, Type = TransactionType.Debit }
+            };
+
+            var commonResponse = new CommonResponseDto<IEnumerable<TransactionDto>>()
+            {
+                Data = transactionsList,
+                Success = true
+            };
+
+            _transactionService.All().Returns(Task.FromResult(commonResponse));
             await AuthenticateAsync();
+
+            // Act
             var response = await _client.GetAsync("transaction/all");
 
             // Assert
@@ -88,8 +103,11 @@ namespace BalanceLedgerApi.Test.Endpoints
             var content = await response.Content.ReadAsStringAsync();
             Assert.NotNull(content);
 
-            var transactions = JsonConvert.DeserializeObject<List<TransactionDto>>(content);
+            var transactions = JsonConvert.DeserializeObject<CommonResponseDto<List<TransactionDto>>>(content);
             Assert.NotNull(transactions);
+            Assert.True(transactions.Success);
+            Assert.NotNull(transactions.Data);
+            Assert.Equal(2, transactions.Data.Count);
         }
 
         [Fact]
