@@ -5,7 +5,6 @@ using BalanceLedgerApi.Data;
 using BalanceLedgerApi.Domain.Model;
 using BalanceLedgerApi.Endpoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using System.Text;

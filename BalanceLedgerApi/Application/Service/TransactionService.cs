@@ -11,7 +11,7 @@ namespace BalanceLedgerApi.Application.Service
     {
         public async Task<IEnumerable<Transaction>> All()
         {
-           return await _repository.All();
+            return await _repository.All();
 
         }
 

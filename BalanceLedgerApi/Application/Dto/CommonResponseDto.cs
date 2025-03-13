@@ -7,7 +7,7 @@
         public T? Data { get; set; }
         public string? Error { get; set; }
 
-        public static CommonResponseDto<T> SuccessResponse(T data, string message = "Operation successful.") 
+        public static CommonResponseDto<T> SuccessResponse(T data, string message = "Operation successful.")
             => new()
             {
                 Success = true,
