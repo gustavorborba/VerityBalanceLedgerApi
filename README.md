@@ -1,4 +1,5 @@
-# VerityExamLedger
+
+# BalanceLedgerApi
 ## Como rodar a aplicação BalanceLedgerApi e ConsolidationApi com Docker e MongoDB
 
 Este projeto consiste em duas aplicações .NET 9 (BalanceLedgerApi e ConsolidationApi) e um MongoDB rodando no Docker. O Docker será usado para hospedar o MongoDB, enquanto as aplicações .NET serão executadas localmente.
@@ -28,18 +29,22 @@ O banco de dados será inicializado com as credenciais de teste: admin e admin12
 1. Navegue até o diretório da aplicação /BalanceLedgerApi
 2. Execute os comandos
 
+```
 dotnet restore
 
 dotnet run
+```
 
 ## Executando ConsolidationApi
 
 1. Navegue até o diretório da aplicação /ConsolidationApi
 2. Execute os comandos
 
+```
 dotnet restore
 
 dotnet run
+```
 
 ## Testando as aplicações
 
@@ -53,57 +58,60 @@ ConsolidationApi: https://localhost:7072
 
 ## Configurações das apps
 
-A ConsolidationApi possuí um Cron Job ao qual por padrão está configurado para rodar uma vez ao dia, a uma da manhã (0 0 0 * * ?). 
+A ConsolidationApi possuí um Cron Job ao qual por padrão está configurado para rodar uma vez ao dia, a uma da manhã (0 0 1 * * ?). 
 
 Por motivo de teste, pode ser alterado a configuração da aplicação. Localizado no appsettings.json. 
 
-Para rodar a cada 30 segundos: (*/30 * * * *)
+Para rodar a cada 30 segundos: (0/30 * * * * ? *)
 
 ### Authorization
 
 Os endpoints possuem uma autenticação básica, para autenticar use o endpoint da BalanceLedgerApi: */auth/authenticate*
 
 usuário padrão
-```{
+```
+{
   "email": "teste@teste.com",
   "password": "minhaSenha"
-}```
+}
+```
+Após isso, para as chamadas, usar o token retornado no header.
 
-após isso, para as chamadas, usar o token retornado no header
+Exemplo:
 
-exemplo
-
-authorization: Bearer {token}
+```authorization: Bearer {token}```
 
 ## Endpoints
 
 ### BalanceLedgerApi
 
-*/transaction/add*
+#### /transaction/add
 
 Recebe:
-```{
+```
+{
   "type": 1, --1 = credit, 2 = dbit
   "value": 15 -- valor da operação
-}```
+}
+```
 
 (Sistema ainda não valida entrada)
 
-*transaction/all*
+#### transaction/all
 
 Lista todas transações. Criado exclusivamente para visualização em teste
 
 ### ConsolidationApi
 
-*/consolidation/run-by-range*
+#### /consolidation/run-by-range
 
 Consolida dados de um range de data. Criado exclusivamente para facilitar sua visualização.
 
-*/consolidation/all*
+#### /consolidation/all
 
 Endpoint que retorna todas consolidações salvas
 
-*/consolidation/export*
+#### /consolidation/export
 
 Exporta últimas consolidações em excel. Recebe um *consolidationsNumber* indicando quantas. Também apenas para facilitar sua avaliação.
 
@@ -112,4 +120,4 @@ Importante, para esse endpoint usando postman, usar a opção de *send and downl
 
 ### Parando docker-compose
 
-Use o comando *docker-compose down*
+Use o comando ```docker-compose down```

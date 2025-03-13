@@ -9,9 +9,21 @@ namespace BalanceLedgerApi.Application.Service
 {
     public class TransactionService(ITransactionRepository _repository, ILogger<TransactionService> _logger, IMapper _mapper) : ITransactionService
     {
-        public async Task<IEnumerable<Transaction>> All()
+        public async Task<CommonResponseDto<IEnumerable<TransactionDto>>> All()
         {
-            return await _repository.All();
+            try
+            {
+                var transactions = await _repository.All();
+
+                var transactionDtos = _mapper.Map<IEnumerable<TransactionDto>>(transactions);
+
+                return CommonResponseDto<IEnumerable<TransactionDto>>.SuccessResponse(transactionDtos);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting transaction");
+                return CommonResponseDto<IEnumerable<TransactionDto>>.ErrorResponse(ex.Message);
+            }
 
         }
 
