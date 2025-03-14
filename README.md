@@ -91,6 +91,7 @@ Após isso, para as chamadas, usar o token retornado no header.
 Exemplo:
 
 ```authorization: Bearer {token}```
+(No swagger não precisa adicionar Bearer)
 
 ## Endpoints
 
