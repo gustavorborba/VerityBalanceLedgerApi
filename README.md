@@ -52,9 +52,11 @@ Há um projeto no postman previamente configurado com todos endpoints.
 
 Certifique-se apenas que estão rodando nas portas:
 
-BalanceLedgerApi: https://localhost:7284
+BalanceLedgerApi: https://localhost:5113
 
-ConsolidationApi: https://localhost:7072
+ConsolidationApi: https://localhost:5192
+
+Caso contrário, será necessário alterar as portas
 
 ## Configurações das apps
 
