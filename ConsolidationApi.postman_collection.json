@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "d02d4cae-1341-446b-8743-559f00b85bfa",
+		"name": "ConsolidationApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15671797"
+	},
+	"item": [
+		{
+			"name": "Consolidation by date range",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsIm5iZiI6MTc0MTkwNDE3OCwiZXhwIjoxNzQxOTExMzc4LCJpYXQiOjE3NDE5MDQxNzh9.Lf2qAyyHbl-WS5oXyOFUKry4MFzq_qv4cUeN8xJzR38",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5192/consolidation/run-by-range?startDate=2025-03-13&endDate=2025-03-14",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"consolidation",
+						"run-by-range"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2025-03-13"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-03-14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsIm5iZiI6MTc0MTkwNDE3OCwiZXhwIjoxNzQxOTExMzc4LCJpYXQiOjE3NDE5MDQxNzh9.Lf2qAyyHbl-WS5oXyOFUKry4MFzq_qv4cUeN8xJzR38",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5192/consolidation/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"consolidation",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consolidation File Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsIm5iZiI6MTc0MTkwNDE3OCwiZXhwIjoxNzQxOTExMzc4LCJpYXQiOjE3NDE5MDQxNzh9.Lf2qAyyHbl-WS5oXyOFUKry4MFzq_qv4cUeN8xJzR38",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5192/consolidation/export?consolidationsNumber=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5192",
+					"path": [
+						"consolidation",
+						"export"
+					],
+					"query": [
+						{
+							"key": "consolidationsNumber",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

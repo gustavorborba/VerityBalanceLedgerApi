@@ -1,6 +1,4 @@
-﻿using BalanceLedgerApi.Domain.Enum;
-
-namespace BalanceLedgerApi.Domain.Model
+﻿namespace BalanceLedgerApi.Domain.Model
 {
     public class Transaction : BaseMongo
     {

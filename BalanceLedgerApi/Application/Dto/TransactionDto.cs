@@ -1,6 +1,4 @@
-﻿using BalanceLedgerApi.Domain.Enum;
-
-namespace BalanceLedgerApi.Application.Dto
+﻿namespace BalanceLedgerApi.Application.Dto
 {
     public class TransactionDto
     {

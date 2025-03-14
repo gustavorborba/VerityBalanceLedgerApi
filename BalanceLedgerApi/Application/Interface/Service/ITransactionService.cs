@@ -1,6 +1,4 @@
-﻿using BalanceLedgerApi.Application.Dto;
-
-namespace BalanceLedgerApi.Application.Interface.Service
+﻿namespace BalanceLedgerApi.Application.Interface.Service
 {
     public interface ITransactionService
     {

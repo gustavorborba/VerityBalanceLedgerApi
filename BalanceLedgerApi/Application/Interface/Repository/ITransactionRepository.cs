@@ -1,6 +1,4 @@
-﻿using BalanceLedgerApi.Domain.Model;
-
-namespace BalanceLedgerApi.Application.Interface.Repository
+﻿namespace BalanceLedgerApi.Application.Interface.Repository
 {
     public interface ITransactionRepository
     {

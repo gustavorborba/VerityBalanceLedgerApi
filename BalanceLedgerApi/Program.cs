@@ -1,9 +1,3 @@
-using BalanceLedgerApi.Application.Interface.Repository;
-using BalanceLedgerApi.Application.Interface.Service;
-using BalanceLedgerApi.Application.Service;
-using BalanceLedgerApi.Data;
-using BalanceLedgerApi.Domain.Model;
-using BalanceLedgerApi.Endpoints;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.OpenApi;

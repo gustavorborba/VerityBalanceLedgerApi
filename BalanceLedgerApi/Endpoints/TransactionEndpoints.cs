@@ -1,7 +1,4 @@
-﻿using BalanceLedgerApi.Application.Dto;
-using BalanceLedgerApi.Application.Interface.Service;
-
-namespace BalanceLedgerApi.Endpoints
+﻿namespace BalanceLedgerApi.Endpoints
 {
     public static class TransactionEndpoints
     {

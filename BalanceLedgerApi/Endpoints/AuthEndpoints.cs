@@ -1,6 +1,4 @@
-﻿using BalanceLedgerApi.Domain.Model;
-using BalanceLedgerApi.Util;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
 namespace BalanceLedgerApi.Endpoints

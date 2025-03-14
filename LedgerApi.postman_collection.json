@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "b735ba7d-5592-4a28-805e-c0e9157e553f",
+		"name": "LedgerApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15671797"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"teste@teste.com\",\r\n  \"password\": \"minhaSenha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5113/auth/authenticate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5113",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsIm5iZiI6MTc0MTkxMTQ1MiwiZXhwIjoxNzQxOTE4NjUyLCJpYXQiOjE3NDE5MTE0NTJ9.HAlmKRgedl9TYQ6aNXtUUIz6gwWylwVRlYBV53ZwIDQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": 1,\r\n  \"value\": 20.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5113/transaction/add",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5113",
+					"path": [
+						"transaction",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsIm5iZiI6MTc0MTkxMTQ1MiwiZXhwIjoxNzQxOTE4NjUyLCJpYXQiOjE3NDE5MTE0NTJ9.HAlmKRgedl9TYQ6aNXtUUIz6gwWylwVRlYBV53ZwIDQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5113/transaction/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5113",
+					"path": [
+						"transaction",
+						"all"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
