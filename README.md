@@ -48,7 +48,7 @@ dotnet run
 
 ## Testando as aplicações
 
-Há um projeto no postman previamente configurado com todos endpoints. 
+Há um projeto no postman previamente configurado com todos endpoints. (dentro da BalanceLedger)
 
 Certifique-se apenas que estão rodando nas portas:
 
@@ -57,6 +57,15 @@ BalanceLedgerApi: https://localhost:5113
 ConsolidationApi: https://localhost:5192
 
 Caso contrário, será necessário alterar as portas
+
+Com swagger:
+
+BalanceLedgerApi: https://localhost:5113/swagger/index.html
+
+ConsolidationApi: https://localhost:5192/swagger/index.html
+
+**Importante**
+Pegar o token via endpoint de autenticação e o cadastrar no Authorize do Swagger
 
 ## Configurações das apps
 
@@ -82,6 +91,7 @@ Após isso, para as chamadas, usar o token retornado no header.
 Exemplo:
 
 ```authorization: Bearer {token}```
+(No swagger não precisa adicionar Bearer)
 
 ## Endpoints
 
