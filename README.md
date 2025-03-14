@@ -58,6 +58,15 @@ ConsolidationApi: https://localhost:5192
 
 Caso contrário, será necessário alterar as portas
 
+Com swagger:
+
+BalanceLedgerApi: https://localhost:5113/swagger/index.html
+
+ConsolidationApi: https://localhost:5192/swagger/index.html
+
+**Importante**
+Pegar o token via endpoint de autenticação e o cadastrar no Authorize do Swagger
+
 ## Configurações das apps
 
 A ConsolidationApi possuí um Cron Job ao qual por padrão está configurado para rodar uma vez ao dia, a uma da manhã (0 0 1 * * ?). 
