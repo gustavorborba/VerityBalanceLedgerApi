@@ -48,7 +48,7 @@ dotnet run
 
 ## Testando as aplicações
 
-Há um projeto no postman previamente configurado com todos endpoints. 
+Há um projeto no postman previamente configurado com todos endpoints. (dentro da BalanceLedger)
 
 Certifique-se apenas que estão rodando nas portas:
 
