@@ -125,7 +125,7 @@ Endpoint que retorna todas consolidações salvas
 
 #### /consolidation/export
 
-Exporta últimas consolidações em excel. Recebe um *consolidationsNumber* indicando quantas. Também apenas para facilitar sua avaliação.
+Exporta últimas consolidações em excel. Recebe um *consolidationsNumber* indicando quantidade de últimas consolidações para o report. Também apenas para facilitar sua avaliação.
 
 Importante, para esse endpoint usando postman, usar a opção de *send and download* para salvar o arquivo.
 
